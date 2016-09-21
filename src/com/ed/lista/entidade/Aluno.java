@@ -1,4 +1,4 @@
-package com.ed.entidade;
+package com.ed.lista.entidade;
 
 public class Aluno {
 

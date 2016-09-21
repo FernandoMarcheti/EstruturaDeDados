@@ -1,6 +1,6 @@
-package com.ed.estruturas;
+package com.ed.lista.estruturas;
 
-import com.ed.entidade.Aluno;
+import com.ed.lista.entidade.Aluno;
 
 public class Vetor<T> {
 	

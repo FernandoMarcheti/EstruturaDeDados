@@ -1,5 +1,5 @@
-import com.ed.entidade.Aluno;
-import com.ed.estruturas.Vetor;
+import com.ed.lista.entidade.Aluno;
+import com.ed.lista.estruturas.Vetor;
 
 
 public class TesteContemAluno {
