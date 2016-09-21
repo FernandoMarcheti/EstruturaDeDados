@@ -1,0 +1,2 @@
+- Verificar diferenças entre ArrayList e Vector
+- análise amortizada

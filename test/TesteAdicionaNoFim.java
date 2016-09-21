@@ -11,7 +11,7 @@ public class TesteAdicionaNoFim {
 	    a1.setNome("João");
 	    a2.setNome("José");
 
-	    Vetor lista = new Vetor();
+	    Vetor<Aluno> lista = new Vetor<>();
 
 	    lista.adiciona(a1);
 	    lista.adiciona(a2);
