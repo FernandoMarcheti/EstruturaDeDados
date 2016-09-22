@@ -1,3 +1,4 @@
+package com.ed.lista;
 import com.ed.lista.entidade.Aluno;
 import com.ed.lista.estruturas.Vetor;
 

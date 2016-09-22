@@ -1,8 +1,9 @@
 package com.ed.lista.estruturas;
 
+import com.ed.lista.EstruturaDeDados;
 import com.ed.lista.entidade.Aluno;
 
-public class Vetor<T> {
+public class Vetor<T> implements EstruturaDeDados<T> {
 	
 	private Object[] datas = new Object[10];
 	
@@ -45,9 +46,9 @@ public class Vetor<T> {
 		this.totalDatas--;
 	}
 	
-	public boolean contem(Aluno aluno){
+	public boolean contem(T data){
 		for (int i = 0; i < this.totalDatas; i++) {
-			if(aluno.equals(this.datas[i])){
+			if(data.equals(this.datas[i])){
 				return true;
 			}
 		}

@@ -1,8 +1,9 @@
+package com.ed.lista;
 import com.ed.lista.entidade.Aluno;
 import com.ed.lista.estruturas.Vetor;
 
 
-public class TestePegaPorPosicao {
+public class TesteContemAluno {
 
 	public static void main(String[] args) {
 		Aluno a1 = new Aluno();
@@ -16,11 +17,14 @@ public class TestePegaPorPosicao {
 	    lista.adiciona(a1);
 	    lista.adiciona(a2);
 
-	    Aluno aluno1 = lista.pega(0);
-	    Aluno aluno2 = lista.pega(1);
-	    
-	    System.out.println(aluno1);
-	    System.out.println(aluno2);
+	    System.out.println(lista.contem(a1));
+
+	    System.out.println(lista.contem(a2));
+
+	    Aluno aluno = new Aluno();
+	    aluno.setNome("Ana");
+
+	    System.out.println(lista.contem(aluno));
 
 	}
 
