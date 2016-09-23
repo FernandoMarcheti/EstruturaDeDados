@@ -8,7 +8,7 @@ public class TestePerformance {
 
 		ArrayList<String> vetor = new ArrayList<String>();
 		LinkedList<String> lista = new LinkedList<String>();
-		int numeroDeElementos = 40000;
+		int numeroDeElementos = 400000;
 
 		// ADICIONADO NO COMEÇO
 
