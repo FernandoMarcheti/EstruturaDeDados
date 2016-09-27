@@ -22,7 +22,7 @@ public class KnightsTour {
 	}
 
 	public static void main(String[] args) {
-		int n = 6;
+		int n = 5;
 		int x = 0;
 		int y = 0;
 		new KnightsTour(n).showTour(x, y);
@@ -47,7 +47,7 @@ public class KnightsTour {
 	boolean tryMove(int i, int x, int y) {
 		// Verifica a quantidade de movimentos
 		boolean done = (i > numSqr);
-		int k = 0;
+		int k = 0; //tentativas
 		int u, v;
 
 		while (!done && k < 8) {
