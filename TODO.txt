@@ -1,2 +1,3 @@
 - Verificar diferenças entre ArrayList e Vector
 - análise amortizada
+- implementação Linkedlist e Arraylist em uma fila
