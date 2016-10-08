@@ -18,6 +18,7 @@ public class ConjuntoEspalhamento {
 	
 	public void adiciona(String obj){
 		if(!this.contem(obj)){
+			this.verificarCarga();
 			int indice = this.calculaIndiceDaTabela(obj);
 			List<String> lista = this.tabela.get(indice);
 			lista.add(obj);
@@ -31,6 +32,7 @@ public class ConjuntoEspalhamento {
 			List<String> lista = this.tabela.get(indice);
 			lista.remove(obj);
 			this.tamanho--;
+			this.verificarCarga();
 		}
 	}
 	
@@ -65,8 +67,31 @@ public class ConjuntoEspalhamento {
 		codigoDeEspalhamento = Math.abs(codigoDeEspalhamento);
 		return codigoDeEspalhamento % this.tabela.size();
 	}
+	
+	private void verificarCarga(){
+		int capacidade = this.tabela.size();
+		double carga = (double) this.tamanho / capacidade;
+		
+		if(carga > 0.75){
+			this.redimensionaTabela(capacidade * 2);
+		} else if (carga < 0.25){
+			this.redimensionaTabela(Math.max(capacidade / 2, 10));
+		}
+	}
+	
+	private void redimensionaTabela(int novaCapacidade){
+		List<String> palavras = this.pegaTodos();
+		this.tabela.clear();
+		
+		for (int i = 0; i < novaCapacidade; i++) {
+			tabela.add(new LinkedList<>());
+		}
+		
+		for (String palavra : palavras) {
+			this.adiciona(palavra);
+		}
+	}
 
-	/* teste de espalhamento
 	public void imprimeTabela() {
 		for (List<String> lista : this.tabela) {
 			System.out.print("[");
@@ -76,16 +101,5 @@ public class ConjuntoEspalhamento {
 			System.out.println("]");
 		}
 	}
-	
-	public static void main(String[] args) {
-
-		ConjuntoEspalhamento conjunto = new ConjuntoEspalhamento();
-
-		for (int i = 0; i < 100; i++) {
-			conjunto.adiciona("" + i);
-		}
-
-		conjunto.imprimeTabela();
-	}*/
 
 }
