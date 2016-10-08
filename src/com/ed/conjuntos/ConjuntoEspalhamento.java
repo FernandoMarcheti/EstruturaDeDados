@@ -21,7 +21,7 @@ public class ConjuntoEspalhamento {
 			int indice = this.calculaIndiceDaTabela(obj);
 			List<String> lista = this.tabela.get(indice);
 			lista.add(obj);
-			this.tamanho++;
+			this.tamanho++;	
 		}
 	}
 	
@@ -52,8 +52,40 @@ public class ConjuntoEspalhamento {
 		return this.tamanho;	 
 	}
 	
-	private int calculaIndiceDaTabela(String obj){
-		return obj.toLowerCase().charAt(0) % 26;
+	private int calculaCodigoDeEspalhamento(String obj){
+		int codigo = 1;
+		for (int i = 0; i < obj.length(); i++) {
+			codigo = 31 * codigo + obj.charAt(i);
+		}
+		return codigo;
 	}
+	
+	private int calculaIndiceDaTabela(String obj){
+		int codigoDeEspalhamento = this.calculaCodigoDeEspalhamento(obj);
+		codigoDeEspalhamento = Math.abs(codigoDeEspalhamento);
+		return codigoDeEspalhamento % this.tabela.size();
+	}
+
+	/* teste de espalhamento
+	public void imprimeTabela() {
+		for (List<String> lista : this.tabela) {
+			System.out.print("[");
+			for (int i = 0; i < lista.size(); i++) {
+				System.out.print("*");
+			}
+			System.out.println("]");
+		}
+	}
+	
+	public static void main(String[] args) {
+
+		ConjuntoEspalhamento conjunto = new ConjuntoEspalhamento();
+
+		for (int i = 0; i < 100; i++) {
+			conjunto.adiciona("" + i);
+		}
+
+		conjunto.imprimeTabela();
+	}*/
 
 }
