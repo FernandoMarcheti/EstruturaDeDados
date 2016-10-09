@@ -27,7 +27,7 @@ public class ConjuntoEspalhamento {
 	}
 	
 	public void remove(String obj){
-		if(!this.contem(obj)){
+		if(this.contem(obj)){
 			int indice = this.calculaIndiceDaTabela(obj);
 			List<String> lista = this.tabela.get(indice);
 			lista.remove(obj);
@@ -63,7 +63,8 @@ public class ConjuntoEspalhamento {
 	}
 	
 	private int calculaIndiceDaTabela(String obj){
-		int codigoDeEspalhamento = this.calculaCodigoDeEspalhamento(obj);
+		//int codigoDeEspalhamento = this.calculaCodigoDeEspalhamento(obj);
+		int codigoDeEspalhamento = obj.hashCode();
 		codigoDeEspalhamento = Math.abs(codigoDeEspalhamento);
 		return codigoDeEspalhamento % this.tabela.size();
 	}

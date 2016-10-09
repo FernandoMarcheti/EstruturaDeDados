@@ -14,7 +14,7 @@ public class Teste {
 	    conjunto.adiciona("mesa");
 	    conjunto.adiciona("telefone");
 	    
-		if (!conjunto.contem("apostila")) {
+		if (conjunto.contem("apostila")) {
 			System.out.println("Erro: não tem a palavra: apostila");
 		}
 		
@@ -28,5 +28,5 @@ public class Teste {
 			System.out.println("Erro: o tamanho do conjunto deveria ser 5");
 		}
 	}
-
+	
 }
