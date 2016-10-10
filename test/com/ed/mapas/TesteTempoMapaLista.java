@@ -1,7 +1,6 @@
 package com.ed.mapas;
 
-import com.ed.mapas.Carro;
-import com.ed.mapas.MapaLista;
+import com.ed.mapas.listas.MapaLista;
 
 public class TesteTempoMapaLista {
 	public static void main(String[] args) {

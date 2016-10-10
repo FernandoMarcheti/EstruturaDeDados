@@ -1,7 +1,10 @@
-package com.ed.mapas;
+package com.ed.mapas.listas;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.ed.mapas.Associacao;
+import com.ed.mapas.Carro;
 
 public class MapaLista {
 	
